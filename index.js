@@ -14,29 +14,29 @@ const gradient = ctx.createRadialGradient(
     gradient.addColorStop(0.4, 'rgba(166, 89, 89, 0.2)');
     gradient.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
     
-    const gradient2 = ctx.createRadialGradient(
-        canvas.width * 0.8535533905932738, canvas.height * 0.14644660940672622, 0,
-        canvas.width * 0.8535533905932738, canvas.height * 0.14644660940672622, canvas.width * 1.14
-      );
-      
-      gradient2.addColorStop(0, '#ffbf00');
-      gradient2.addColorStop(0.1, 'rgba(242, 185, 13, 0.8)');
-      gradient2.addColorStop(0.2, 'rgba(230, 179, 26, 0.6)');
-      gradient2.addColorStop(0.3, 'rgba(204, 166, 51, 0.4)');
-      gradient2.addColorStop(0.4, 'rgba(166, 147, 89, 0.2)');
-      gradient2.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
+const gradient2 = ctx.createRadialGradient(
+    canvas.width * 0.8535533905932738, canvas.height * 0.14644660940672622, 0,
+    canvas.width * 0.8535533905932738, canvas.height * 0.14644660940672622, canvas.width * 1.14
+    );
+    
+    gradient2.addColorStop(0, '#ffbf00');
+    gradient2.addColorStop(0.1, 'rgba(242, 185, 13, 0.8)');
+    gradient2.addColorStop(0.2, 'rgba(230, 179, 26, 0.6)');
+    gradient2.addColorStop(0.3, 'rgba(204, 166, 51, 0.4)');
+    gradient2.addColorStop(0.4, 'rgba(166, 147, 89, 0.2)');
+    gradient2.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
 
 const gradient3 = ctx.createRadialGradient(
     canvas.width, canvas.height / 2, 0,
     canvas.width, canvas.height / 2, canvas.width * 1.17
   );
 
-  gradient3.addColorStop(0, '#80ff00');
-  gradient3.addColorStop(0.1, 'rgba(128, 242, 13, 0.8)');
-  gradient3.addColorStop(0.2, 'rgba(128, 230, 26, 0.6)');
-  gradient3.addColorStop(0.3, 'rgba(128, 204, 51, 0.4)');
-  gradient3.addColorStop(0.4, 'rgba(128, 166, 89, 0.2)');
-  gradient3.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
+    gradient3.addColorStop(0, '#80ff00');
+    gradient3.addColorStop(0.1, 'rgba(128, 242, 13, 0.8)');
+    gradient3.addColorStop(0.2, 'rgba(128, 230, 26, 0.6)');
+    gradient3.addColorStop(0.3, 'rgba(128, 204, 51, 0.4)');
+    gradient3.addColorStop(0.4, 'rgba(128, 166, 89, 0.2)');
+    gradient3.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
 
 const gradient4 = ctx.createRadialGradient(
     canvas.width * 0.8535533905932738, canvas.height * 0.8535533905932738, 0,
@@ -79,24 +79,24 @@ const gradient7 = ctx.createRadialGradient(
 0, canvas.height * 0.50000000000001, canvas.width * 1.17
 );
 
-gradient7.addColorStop(0, '#7f00ff');
-gradient7.addColorStop(0.1, 'rgba(128, 13, 242, 0.8)');
-gradient7.addColorStop(0.2, 'rgba(128, 26, 230, 0.6)');
-gradient7.addColorStop(0.3, 'rgba(128, 51, 204, 0.4)');
-gradient7.addColorStop(0.4, 'rgba(128, 89, 166, 0.2)');
-gradient7.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
+    gradient7.addColorStop(0, '#7f00ff');
+    gradient7.addColorStop(0.1, 'rgba(128, 13, 242, 0.8)');
+    gradient7.addColorStop(0.2, 'rgba(128, 26, 230, 0.6)');
+    gradient7.addColorStop(0.3, 'rgba(128, 51, 204, 0.4)');
+    gradient7.addColorStop(0.4, 'rgba(128, 89, 166, 0.2)');
+    gradient7.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
 
 const gradient8 = ctx.createRadialGradient(
 canvas.width * 0.146447, canvas.height * 0.146447, 15,
 canvas.width * 0.146447, canvas.height * 0.146447, canvas.width * 1.14
 );
 
-gradient8.addColorStop(0, '#ff00bf');
-gradient8.addColorStop(0.1, 'rgba(242, 13, 185, 0.8)');
-gradient8.addColorStop(0.2, 'rgba(230, 26, 179, 0.6)');
-gradient8.addColorStop(0.3, 'rgba(204, 51, 166, 0.4)');
-gradient8.addColorStop(0.4, 'rgba(166, 89, 147, 0.2)');
-gradient8.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
+    gradient8.addColorStop(0, '#ff00bf');
+    gradient8.addColorStop(0.1, 'rgba(242, 13, 185, 0.8)');
+    gradient8.addColorStop(0.2, 'rgba(230, 26, 179, 0.6)');
+    gradient8.addColorStop(0.3, 'rgba(204, 51, 166, 0.4)');
+    gradient8.addColorStop(0.4, 'rgba(166, 89, 147, 0.2)');
+    gradient8.addColorStop(0.5, 'hsla(0, 0%, 50%, 0)');
 
 //Apply the gradient to the canvas
 
@@ -124,12 +124,9 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = gradient;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-
-
-const hoveredColor = document.getElementById("selected-color");
 const selectedColor = document.getElementById("selected-color");
 
-function pick(event, destination) {
+function pickColor(event, destination) {
   const bounding = canvas.getBoundingClientRect();
   const x = event.clientX - bounding.left;
   const y = event.clientY - bounding.top;
@@ -142,34 +139,4 @@ function pick(event, destination) {
   return rgba;
 }
 
-canvas.addEventListener("mousemove", (event) => pick(event, hoveredColor));
-canvas.addEventListener("click", (event) => pick(event, selectedColor));
-
-
-
-// HERE
-// const interval = 3;
-// const radius = canvas.width / 2;
-
-// for (let i = 0; i < interval; i++) {
-// 	const cos = Math.abs(calcCos(i * (360 / interval)));
-// 	const sin = Math.abs(calcSin(i * (360 / interval)));
-// 	const tan = Math.abs(calcTan(i * (360 / interval)));
-
-// 	const x0 = radius * cos; // The x-axis coordinate of the start circle.
-// 	const y0 = radius - radius * cos; // The y-axis coordinate of the start circle.
-// 	const r0 = 0; // The radius of the start circle. Must be non-negative and finite.
-// 	const x1 = radius * cos; // The x-axis coordinate of the end circle.
-// 	const y1 = radius - radius * cos; // The y-axis coordinate of the end circle.
-// 	const r1 = radius; // The radius of the end circle. Must be non-negative and finite.
-// 	const gradient = ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
-// 	if (i === 1) {
-// 		gradient.addColorStop(0, "#00FF00");
-// 	} else {
-// 		gradient.addColorStop(0, "#FF0000");
-// 	}
-
-// 	gradient.addColorStop(1, "#FFFFFF");
-// 	ctx.fillStyle = gradient;
-// 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-// }
+canvas.addEventListener("click", (event) => pickColor(event, selectedColor));
