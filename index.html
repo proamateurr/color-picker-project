@@ -3,37 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dudu's Color Picker</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
-    
     <div class="container">
         <div class="picker-content-holder">
 
-            <div class="color-picker-container">
-                <canvas id="canvas" width="500px" height="500px"></canvas>
+            <div id="color-lightness" class="color-lightness"  style="background: linear-gradient(rgb(0, 0, 0), rgb(255, 255, 255));" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <!-- <div id="lightness-selector" class="selector"></div> -->
+                <div class="color-picker-container">
+                    <canvas id="canvas" width="500px" height="500px">
+                        <div id="color-selector" class="selector"></div>
+                    </canvas>
+                </div>
             </div>
-            
+                
             <div class="color-lightness-container">
-                <div class="lightness-title">Lightness</div>
-                <canvas id="color-lightness" class="color-lightness">
-                    <div class="lightness-selector"></div>
-                </canvas>
             </div>
+
             <div class="colorValueBoxes">
-                <div class="rgb"></div>
-                <div class="hsl"></div>
+                <div class="rgb">
+                    
+                </div>
                 <div class="hex"></div>
                 <div id="selected-color"></div>
             </div>
         </div>
     </div>
-    <script src="index.js"></script> 
+    <script src="script.js"></script> 
 </body>
 </html>
-
-
- 
