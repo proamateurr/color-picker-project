@@ -367,74 +367,75 @@ class colorPickerClass {
 
     }
 
-  // Event listeners for mouse interactions
-  listenForEvents() {
-    let isMouseDown = false;
+    // Event listeners for mouse interactions
+    listenForEvents() {
+        let isMouseDown = false;
 
-    const onMouseDown = (e) => {
-      let rect = this.target.getBoundingClientRect();
-      let currentX = e.clientX - rect.left;
-      let currentY = e.clientY - rect.top;
+        const onMouseDown = (e) => {
+        let rect = this.target.getBoundingClientRect();
+        let currentX = e.clientX - rect.left;
+        let currentY = e.clientY - rect.top;
 
-      // Check if the mouse is within the circular canvas
-      if (
-        Math.pow(currentX - this.width / 2, 2) +
-          Math.pow(currentY - this.height / 2, 2) <=
-        Math.pow(this.width / 2, 2)
-      ) {
-        isMouseDown = true;
-      } else {
-        // Update the color selector position
-        this.updateColorSelectorPosition(currentX, currentY);
-      }
-    };
+        // Check if the mouse is within the circular canvas
+        if (
+            Math.pow(currentX - this.width / 2, 2) +
+            Math.pow(currentY - this.height / 2, 2) <=
+            Math.pow(this.width / 2, 2)
+        ) {
+            isMouseDown = true;
+        } else {
+            // Update the color selector position
+            this.updateColorSelectorPosition(currentX, currentY);
+        }
+        };
 
-    const onMouseMove = (e) => {
-      let rect = this.target.getBoundingClientRect();
-      let currentX = e.clientX - rect.left;
-      let currentY = e.clientY - rect.top;
+        const onMouseMove = (e) => {
+        let rect = this.target.getBoundingClientRect();
+        let currentX = e.clientX - rect.left;
+        let currentY = e.clientY - rect.top;
 
-      // If the mouse is down, update the color selector position
-      if (isMouseDown) {
-        this.updateColorSelectorPosition(currentX, currentY);
-      }
-        colorPicker.draw();
-    };
+        // If the mouse is down, update the color selector position
+        if (isMouseDown) {
+            this.updateColorSelectorPosition(currentX, currentY);
+        }
+            colorPicker.draw();
+        };
 
-    const onMouseUp = () => {
-      isMouseDown = false;
-    };
+        const onMouseUp = () => {
+        isMouseDown = false;
+        };
 
-    // Add event listeners to the canvas
-    this.target.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
-  }
-
-  // Function to update the color selector position
-  updateColorSelectorPosition(x, y) {
-    // Calculate the distance from the center of the canvas
-    let distance = Math.sqrt(
-      Math.pow(x - this.width / 2, 2) + Math.pow(y - this.height / 2, 2)
-    );
-
-    // Check if the mouse is still within the circular canvas
-    if (distance <= this.width / 2) {
-      // Update the color selector position
-      this.colorSelector.x = x;
-      this.colorSelector.y = y;
-    } else {
-      // If the mouse moves outside the circle, calculate the position on the circle
-      let angle = Math.atan2(y - this.height / 2, x - this.width / 2);
-      this.colorSelector.x =
-        this.width / 2 + (this.width / 2 - 10) * Math.cos(angle);
-      this.colorSelector.y =
-        this.height / 2 + (this.height / 2 - 10) * Math.sin(angle);
+        // Add event listeners to the canvas
+        this.target.addEventListener("mousedown", onMouseDown);
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
     }
-  }
+
+    // Function to update the color selector position
+    updateColorSelectorPosition(x, y) {
+        // Calculate the distance from the center of the canvas
+        let distance = Math.sqrt(
+        Math.pow(x - this.width / 2, 2) + Math.pow(y - this.height / 2, 2)
+        );
+
+        // Check if the mouse is still within the circular canvas
+        if (distance <= this.width / 2) {
+        // Update the color selector position
+        this.colorSelector.x = x;
+        this.colorSelector.y = y;
+        } else {
+        // If the mouse moves outside the circle, calculate the position on the circle
+        let angle = Math.atan2(y - this.height / 2, x - this.width / 2);
+        this.colorSelector.x =
+            this.width / 2 + (this.width / 2 - 10) * Math.cos(angle);
+        this.colorSelector.y =
+            this.height / 2 + (this.height / 2 - 10) * Math.sin(angle);
+        }
+    }
 }
 
 //Create an instance of the color picker
 const colorPicker = new colorPickerClass (document.getElementById("canvas"), 500, 500);
 
 //Update the color picker continuously
+colorPicker.draw();
