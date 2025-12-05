@@ -13,7 +13,6 @@ div {
 }
 
 .container {
-    border: 1px solid;
     margin: 50px;
 }
 
@@ -43,8 +42,8 @@ div {
     margin-top: 16px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    border: 2px groove;
 }
 
 #color-swatch {
