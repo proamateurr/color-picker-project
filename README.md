@@ -4,6 +4,9 @@
 
 The Color Picker project is a web-based application that allows users to interactively select colors from a color wheel with various gradients. It provides a visually appealing interface for choosing colors and outputs the selected color's RGB and hex values.
 
+This is a live preview using github pages:
+
+
 ## Table of Contents
 
 - [Features](#features)
