@@ -19,6 +19,9 @@ class colorPickerClass {
     this.listenForEvents();
 
     this.draw();
+
+    const initialColor = this.getSelectedColor();
+    this.updateColorPreview(initialColor)
   }
 
   draw() {
@@ -223,6 +226,7 @@ class colorPickerClass {
       this.updateColorSelectorPosition(x, y);
       const color = this.getSelectedColor();
       console.log("Selected color (click):", color);
+      this.updateColorPreview(color)
 
       isMouseDown = true;
     };
@@ -238,6 +242,7 @@ class colorPickerClass {
       this.updateColorSelectorPosition(x, y);
       const color = this.getSelectedColor();
       console.log("Selected color (drag):", color);
+      this.updateColorPreview(color)
     };
 
     const onMouseUp = () => {
@@ -258,7 +263,7 @@ class colorPickerClass {
     const dy = y - centerY;
     let distance = Math.sqrt(dx * dx + dy * dy);
 
-    const maxRadius = this.width / 2 ;
+    const maxRadius = this.width / 2;
 
     if (distance <= maxRadius) {
       this.colorSelector.x = x;
@@ -299,6 +304,18 @@ class colorPickerClass {
       rgbaString: `rgba(${r}, ${g}, ${b}, ${a.toFixed(3)})`,
     };
   }
+
+  updateColorPreview (color) {
+    const swatchElement = document.getElementById('color-swatch')
+    const hexElement = document.getElementById('color-hex')
+    const rgbaElement = document.getElementById('color-rgba')
+
+    if (!swatchElement || !hexElement || !rgbaElement) return;
+
+    swatchElement.style.backgroundColor = color.rgbaString;
+    hexElement.textContent = color.hex
+    rgbaElement.textContent = color.rgbaString
+  };
 }
 
 const colorPicker = new colorPickerClass(
