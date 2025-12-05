@@ -3,8 +3,6 @@ html * {
 }
 
 body {
-    height: 100vh;
-    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,11 +13,13 @@ div {
 }
 
 .container {
-    padding: 0 10%;
+    border: 1px solid;
+    margin: 50px;
 }
 
 .picker-content-holder {
     border-radius: 5% 5%;
+    border: 2px solid;
     box-shadow: 0 0 5px 1px rgb(70, 70, 70);
     padding: 50px;
     margin: 0 auto;
@@ -27,6 +27,7 @@ div {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
+    gap: 25px;
     max-width: 600px;
 }
 
@@ -36,6 +37,30 @@ div {
     width: 100%;
     border-radius: 100%;
     background-color: white;
+}
+
+#color-preview {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px groove;
+}
+
+#color-swatch {
+    width: 40px;   
+    height: 40px;
+    border-radius: 50%;
+    border: 2px groove;
+    margin: 10px;
+}
+
+#color-hex{
+    
+}
+
+#color-rgba {
+
 }
 
 .example {
